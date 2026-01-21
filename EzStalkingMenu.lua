@@ -249,6 +249,18 @@ function Ez.Menu:initialize()
     }
     options_table[#options_table+1] =
     {
+        type = "checkbox",
+        width = "half",
+        name = L.menu.location.adventure,
+        tooltip = L.menu.location.adventure_tooltip,
+        getFunc = function() return Ez.settings.log.adventure end,
+        setFunc = function(value) Ez.settings.log.adventure = value end,
+        disabled = function() return not Ez.settings.log.adventure end,
+        requiresReload = false,
+        default = Ez.defaults.log.adventure,
+    }
+    options_table[#options_table+1] =
+    {
         type = "header",
         name = L.menu.indicator.header,
     }

@@ -30,6 +30,10 @@ local substring_housing                 = "Maison du joueur"
 L.menu.location.housing_tooltip         = "Activer l'enregistrement automatique dans les maisons des joueurs."
 L.menu.location.housing                 = substring_housing -- do not edit
 
+local substring_adventure               = "Adventure Zones"
+L.menu.location.adventure_tooltip       = "Enable automatic logging in adventure zones."
+L.menu.location.adventure               = substring_adventure -- do not edit
+
 local substring_arenas                  = "Arènes"
 L.menu.location.arenas_tooltip          = "Activer l'enregistrement automatique dans les arènes solo et de groupe."
 L.menu.location.arenas                  = substring_arenas -- do not edit

@@ -24,6 +24,7 @@ Ez.defaults = {
         arenas = false,
         dungeons = false,
         endless = false,
+        adventure = false,
         trials = false,
         normal_difficulty = false,
         combat_only = false,
@@ -46,7 +47,7 @@ Ez.defaults = {
     },
 }
 
-local ZoneType = { Overland = 0, Instance = 1, Cyrodiil = 2, ImperialCity = 3, Battleground = 4, House = 5 }
+local ZoneType = { Overland = 0, Instance = 1, Cyrodiil = 2, ImperialCity = 3, Battleground = 4, House = 5, Adventure = 6 }
 local InstanceType = { Uncategorized = 0, Trial = 1, Arena = 2, Dungeon = 3, Endless = 4}
 
 Ez.defaults.zone_id[InstanceType.Trial] = { }
@@ -72,6 +73,8 @@ local function determine_zone_type()
         zone_type = ZoneType.ImperialCity
     elseif IsInCyrodiil() then
         zone_type = ZoneType.Cyrodiil
+    elseif IsInAdventureZone() then
+        zone_type = ZoneType.Adventure
     end
 
     return zone_type
@@ -146,6 +149,7 @@ local function determine_encounterlog_status()
         or (zone_type == ZoneType.ImperialCity and Ez.settings.log.imperial_city)
         or (zone_type == ZoneType.Cyrodiil and Ez.settings.log.cyrodiil)
         or (zone_type == ZoneType.House and Ez.settings.log.housing)
+        or (zone_type == ZoneType.Adventure and Ez.settings.log.adventure)
     then
         toggle = true
     end

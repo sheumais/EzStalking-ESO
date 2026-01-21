@@ -15,6 +15,7 @@ This addon lets you configure content areas you want to automatically start logg
     * Endless Activities
     * Trials
     * Battlegrounds
+    * Adventure Zones
     * Imperial City
     * Cyrodiil
 * Optional: Get a confirmation dialog instead of logging automatically (requires LibDialog)<br>
